@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { useState } from 'react';
+import {projects} from "../../data/constants"; 
 import Projectcard from '../Cards/Projectcard';
 
 const Container = styled.div`
@@ -150,12 +151,17 @@ const Projects = () => {
             </ToogleGroup>
 
             <CardContainer>
-              <Projectcard />
+              {toggle === "all" && 
+                projects.map((project) => <Projectcard project ={project} />)}
+                {projects
+                  .filter((item) => item.category === toggle)
+                  .map((project) => (
+                    <Projectcard project={project} />
+                  ))}
             </CardContainer>
         </Wrapper>
     </Container>
-  )
-
+  );
 };
 
-export default Projects
+export default Projects;
