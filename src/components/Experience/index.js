@@ -1,4 +1,3 @@
-import { TimelineOppositeContent } from '@mui/lab';
 import React from 'react';
 import styled from "styled-components";
 import Timeline from '@mui/lab/Timeline';
@@ -17,7 +16,11 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
-  padding: 50px 0px;
+  padding: 40px 0px 80px 0px;
+
+  @media (max-width: 960px) {
+    padding: 0px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -89,8 +92,7 @@ const Experience = () => {
             </TimeLineSection>
         </Wrapper>
     </Container>
-  )
-
+  );
 };
 
 export default Experience

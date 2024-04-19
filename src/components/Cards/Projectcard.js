@@ -23,12 +23,11 @@ const Card = styled.div`
   }
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   width: 100%;
   height: 180px;
   background-color: ${({ theme }) => theme.white};
   border-radius: 10px;
-  object-fit: cover;
   box-shaddow: 0 0 16px 2px rgba(0,0,0,0.3);
 `;
 
@@ -63,7 +62,7 @@ const Title = styled.div`
   font-weight: 600;
   color: ${({ theme}) => theme.text_secondary};
   overflow: hidden;
-  text-overflow: ellipsos;
+  text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
   -webkit-line-clamp: 2;
@@ -83,7 +82,8 @@ const Date = styled.div`
 
 const Description = styled.div`
   font-weight: 400;
-  color: ${({ theme}) => theme.text_secondary + 99};
+  color: ${({ theme }) => theme.text_secondary + 99};
+  overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -123,7 +123,7 @@ const Projectcards = ({ project }) => {
         <Description>{project.description}</Description>
       </Details>
       <Members>
-        {project.members?.map((member) => (
+        {project.member?.map((member) => (
           <Avatar src={member.img} />
         ))}
       </Members>
